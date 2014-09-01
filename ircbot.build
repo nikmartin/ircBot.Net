@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+    <project name="ircBot.net" default="build" basedir=".">
+        <description>ircBot.net IRC bot.</description>
+        <property name="debug" value="true" overwrite="false" />
+        <target name="clean" description="remove all generated files">
+            <delete file="*.exe" failonerror="false" />
+            <delete file="*.pdb" failonerror="false" />
+        </target>
+        <target name="build" description="compiles the source code">
+            <csc target="exe" output="GISBot.0.9.exe" debug="${debug}">
+					<sources>
+               	<include name="AssemblyInfo.cs" />
+                  <include name="CommandLine.cs" />
+                  <include name="ircBot.cs" />
+                  <include name="SearchResponse.cs" />
+                  <include name="SearchService.cs" />
+                </sources>
+            </csc>
+        </target>
+    </project>
